@@ -1,0 +1,2134 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2024.1">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="1450" y="534" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">\\clecpfs02\sys\Salesforce_Team\BI_Revision_Control\Hyper_Extracts\Additional_Data_Sources\Unmatched User v2s.xlsx|||`Sheet1$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText><![CDATA[Unmatched User v2s.xlsx
+]]></AnnotationText>
+          <DefaultAnnotationText>Unmatched User v2s.xlsx
+Query=`Sheet1$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RepSoldTo" size="255" source="File: \\clecpfs02\sys\Salesforce_Team\BI_Revision_Control\Hyper_Extracts\Additional_Data_Sources\Unmatched User v2s.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Name" size="255" source="File: \\clecpfs02\sys\Salesforce_Team\BI_Revision_Control\Hyper_Extracts\Additional_Data_Sources\Unmatched User v2s.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="SF Name" size="255" source="File: \\clecpfs02\sys\Salesforce_Team\BI_Revision_Control\Hyper_Extracts\Additional_Data_Sources\Unmatched User v2s.xlsx|||`Sheet1$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings>
+        <Position x="1725" y="534" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Check Box (135)">False</Value>
+          <Value name="Check Box (136)">False</Value>
+          <Value name="List Box (11)">"Name","SF Name"</Value>
+          <Value name="Check Box (84)">True</Value>
+          <Value name="Check Box (117)">True</Value>
+          <Value name="Check Box (15)">True</Value>
+          <Value name="Check Box (109)">False</Value>
+          <Value name="Check Box (122)">False</Value>
+          <Value name="Check Box (53)">False</Value>
+          <Value name="Check Box (58)">False</Value>
+          <Value name="Check Box (70)">False</Value>
+          <Value name="Check Box (77)">True</Value>
+          <Value name="Drop Down (81)">upper</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Cleanse.yxmc" />
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1411" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="FullName" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Name" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1868" y="522" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Name" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Name" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Name" selected="True" rename="Right_Name" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="2050" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="FullName" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="SF Name" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2193" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="ProfileName" selected="False" />
+            <SelectField field="Name" selected="False" />
+            <SelectField field="RepSoldTo" selected="False" />
+            <SelectField field="SF Name" selected="False" />
+            <SelectField field="LINCOLN OFC NBR" selected="False" />
+            <SelectField field="LINCOLN TSR Y CODE" selected="False" />
+            <SelectField field="MARK WITH AN X THE NEW Y-CODE" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="29">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1510" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="ProfileName" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="32">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="2360" y="390" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="37">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1606" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>!Contains([Username], "_")</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>!Contains([Username], "_")</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="38">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="2492" y="390" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="Condition Type" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="42">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="2612" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="0">
+            <Field field="Name" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Name - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="45">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="1593" y="534" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="0">
+            <Field field="Name" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Name - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="65">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2744" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="FullName" selected="False" />
+            <SelectField field="CreatedDate" selected="True" type="Date" size="10" />
+            <SelectField field="Condition Type" selected="True" rename="CTyp" />
+            <SelectField field="Name 1" selected="True" rename="Name" />
+            <SelectField field="EndDate" selected="True" type="V_WString" size="50" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="72">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="2864" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="if isNull([Name]) THEN [Right_Name] Else [Name] endif" field="Name" size="50" type="V_String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Name = if isNull([Name]) THEN [Right_Name] Else [Name] endif
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="73">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2982" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Right_Name" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="75">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="3116" y="522" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Id" selected="True" />
+            <SelectField field="CTyp" selected="True" rename="YCode__c" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="86">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="66" width="516" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Using TSR Name, match US YCode file to Salesforce and return the Unique Salesforce ID.</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor r="168" g="196" b="196" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="90">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1374" y="654" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>Contains</Operator>
+            <Field>Name</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2025-03-12 09:52:06</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>Hoefler</Operand>
+              <StartDate>2025-03-12 09:52:06</StartDate>
+              <EndDate>2025-03-12 09:52:06</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Contains([Name],"Hoefler")</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="97">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2970" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="ProfileName" selected="False" />
+            <SelectField field="IsActive" selected="False" />
+            <SelectField field="Country" selected="False" />
+            <SelectField field="CreatedDate" selected="False" />
+            <SelectField field="Team_Role__c" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="108">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="4086" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Id" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Right_Id" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Id" selected="True" input="Left_" />
+                <SelectField field="Left_Name" selected="True" input="Left_" />
+                <SelectField field="Left_Username" selected="True" input="Left_" />
+                <SelectField field="Left_IsActive" selected="True" input="Left_" />
+                <SelectField field="Left_Country" selected="True" input="Left_" />
+                <SelectField field="Left_CreatedDate" selected="True" input="Left_" />
+                <SelectField field="Left_Team_Role__c" selected="True" input="Left_" />
+                <SelectField field="Left_ManagerId" selected="True" input="Left_" />
+                <SelectField field="Left_CTyp" selected="True" input="Left_" />
+                <SelectField field="Left_Sold-To" selected="True" input="Left_" />
+                <SelectField field="Left_SOff " selected="True" input="Left_" />
+                <SelectField field="Left_SGrp " selected="True" input="Left_" />
+                <SelectField field="Left_SGrp  Desc " selected="True" input="Left_" />
+                <SelectField field="Left_From Date" selected="True" input="Left_" />
+                <SelectField field="Left_End Date" selected="True" input="Left_" />
+                <SelectField field="Left_Condition Type_Matched" selected="True" input="Left_" />
+                <SelectField field="Right_Right_Id" selected="False" input="Right_" />
+                <SelectField field="Right_Name" selected="False" rename="Right_Name" input="Right_" />
+                <SelectField field="Right_Manager1Name" selected="True" input="Right_" />
+                <SelectField field="Right_Manager1Email" selected="True" input="Right_" />
+                <SelectField field="Right_Manager2Name" selected="True" input="Right_" />
+                <SelectField field="Right_Manager2Email" selected="True" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="111">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="4182" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="Id" />
+            <Field field="Name" />
+            <Field field="Username" />
+            <Field field="IsActive" />
+            <Field field="Country" />
+            <Field field="CreatedDate" />
+            <Field field="Team_Role__c" />
+            <Field field="ManagerId" />
+            <Field field="CTyp" />
+            <Field field="Sold-To" />
+            <Field field="SOff " />
+            <Field field="SGrp " />
+            <Field field="SGrp  Desc " />
+            <Field field="From Date" />
+            <Field field="End Date" />
+            <Field field="Condition Type_Matched" />
+            <Field field="Manager1Name" />
+            <Field field="Manager1Email" />
+            <Field field="Manager2Name" />
+            <Field field="Manager2Email" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="112">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="4494" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>Contains</Operator>
+            <Field>Name</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2025-05-14 10:26:38</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>Rillema</Operand>
+              <StartDate>2025-05-14 10:26:38</StartDate>
+              <EndDate>2025-05-14 10:26:38</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Contains([Name],"Rillema")</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="118">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="4434" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Right_YCode__c" selected="False" />
+            <SelectField field="Right_Right_YCode__c" selected="False" />
+            <SelectField field="Right_Right_Right_YCode__c" selected="True" rename="Manager YCode" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="119">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="4434" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Right_YCode__c" selected="False" />
+            <SelectField field="Right_Right_YCode__c" selected="False" />
+            <SelectField field="Right_Right_Right_YCode__c" selected="True" rename="Manager YCode" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="117">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1409" y="749" width="245" height="195" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Delete File</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Delete File</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="114">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="1434" y="798" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File RecordLimit="" FileFormat="23">odbc:DRIVER={SQL Server};DATABASE=salesforce backups;SERVER=NUSCLEVPDBAMP02;Trusted_Connection=yes|||select [User].[Id],
+	[User].[YCode__c] 
+from [User]</File>
+              <FormatSpecificOptions>
+                <PreSQL />
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <NoProgress>True</NoProgress>
+                <SessionReadOnly>True</SessionReadOnly>
+                <CacheData>False</CacheData>
+                <TableStyle>Quoted</TableStyle>
+                <ReadUncommitted>False</ReadUncommitted>
+                <PostSQL />
+                <SingleRowFetch>False</SingleRowFetch>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[
+Query=select [User].[Id],
+	[User]...]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Id" size="18" source="File: odbc:DRIVER={SQL Server};DATABASE=salesforce backups;SERVER=NUSCLEVPDBAMP02;Trusted_Connection=yes|||select [User].[Id],&#xA;	[User].[YCode__c] &#xA;from [User]" type="V_WString" />
+                <Field name="YCode__c" size="4" source="File: odbc:DRIVER={SQL Server};DATABASE=salesforce backups;SERVER=NUSCLEVPDBAMP02;Trusted_Connection=yes|||select [User].[Id],&#xA;	[User].[YCode__c] &#xA;from [User]" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="115">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="1554" y="798" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>IsNotNull</Operator>
+                <Field>YCode__c</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2025-10-09 08:16:33</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>
+                  </Operand>
+                  <StartDate>2025-10-09 08:16:33</StartDate>
+                  <EndDate>2025-10-09 08:16:33</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>!IsNull([YCode__c])</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="109">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="3545" y="113" width="347" height="180" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Manager 2</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Manager 2</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="102">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="3570" y="198" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="Id" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="Right_ManagerId" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Right_Id" selected="True" rename="Right_Id" input="Right_" />
+                    <SelectField field="Right_Username" selected="True" rename="Right_Username" input="Right_" />
+                    <SelectField field="Right_Right_ManagerId" selected="True" rename="Right_Right_ManagerId" input="Right_" />
+                    <SelectField field="Right_ManagerId" selected="True" rename="Right_ManagerId" input="Right_" />
+                    <SelectField field="Right_FullName" selected="True" rename="Right_FullName" input="Right_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="103">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="3762" y="162" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>Contains</Operator>
+                <Field>Name</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2025-05-14 09:31:36</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>Rummel</Operand>
+                  <StartDate>2025-05-14 09:31:36</StartDate>
+                  <EndDate>2025-05-14 09:31:36</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Contains([Name],"Rummel")</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="105">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="3666" y="198" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Id" selected="False" />
+                <SelectField field="Username" selected="True" rename="Manager2Email" />
+                <SelectField field="ManagerId" selected="False" />
+                <SelectField field="Right_Id" selected="True" />
+                <SelectField field="Name" selected="True" />
+                <SelectField field="Manager1Name" selected="True" />
+                <SelectField field="Manager1Email" selected="True" />
+                <SelectField field="FullName" selected="True" rename="Manager2Name" />
+                <SelectField field="Right_Username" selected="False" />
+                <SelectField field="Right_Right_ManagerId" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="104">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="3113" y="208" width="335" height="253" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Manager 1</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Manager 1</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="98">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="3138" y="257" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="ManagerId" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="Id" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Right_Id" selected="True" rename="Right_Id" input="Right_" />
+                    <SelectField field="Right_Username" selected="True" rename="Right_Username" input="Right_" />
+                    <SelectField field="Right_ManagerId" selected="True" rename="Right_ManagerId" input="Right_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="101">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="3222" y="258" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="IsActive" selected="False" />
+                <SelectField field="Country" selected="False" />
+                <SelectField field="CreatedDate" selected="False" />
+                <SelectField field="Team_Role__c" selected="False" />
+                <SelectField field="ManagerId" selected="False" />
+                <SelectField field="CTyp" selected="False" />
+                <SelectField field="Sold-To" selected="False" />
+                <SelectField field="SOff " selected="False" />
+                <SelectField field="SGrp " selected="False" />
+                <SelectField field="SGrp  Desc " selected="False" />
+                <SelectField field="From Date" selected="False" />
+                <SelectField field="End Date" selected="False" />
+                <SelectField field="Condition Type_Matched" selected="False" />
+                <SelectField field="Right_Id" selected="False" />
+                <SelectField field="FullName" selected="True" rename="Manager1Name" />
+                <SelectField field="Right_Username" selected="True" rename="Manager1Email" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="100">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="3318" y="330" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>Contains</Operator>
+                <Field>Name</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2025-05-14 09:31:06</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>Rummel</Operand>
+                  <StartDate>2025-05-14 09:31:06</StartDate>
+                  <EndDate>2025-05-14 09:31:06</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Contains([Name],"Rummel")</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="83">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="4541" y="293" width="157" height="624" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Output</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Output</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="46">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="4566" y="438" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="25">\\clecpfs02\sys\Salesforce_Team\BI_Revision_Control\Hyper_Extracts\Additional_Data_Sources\YCode to SFID.xlsx|||Sheet1</File>
+              <Passwords />
+              <Disable>False</Disable>
+              <FormatSpecificOptions>
+                <PreserveFormat>False</PreserveFormat>
+                <SkipFieldNames>False</SkipFieldNames>
+                <OutputOption>Overwrite</OutputOption>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>SF_YCode_SAP_SFUID</AnnotationText>
+              <DefaultAnnotationText>YCode to SFID.xlsx
+Query=Sheet1</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="50">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="4566" y="342" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="23">odbc:DRIVER={SQL Server};DATABASE=SF_DATASOURCES;SERVER=NUSCLEVPDBAMP02;Trusted_Connection=yes|||SF_YCode_SAP_SFUID</File>
+              <Passwords />
+              <Disable>False</Disable>
+              <FormatSpecificOptions>
+                <TransactionSize />
+                <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+                <PostSQL />
+                <TableStyle>Quoted</TableStyle>
+                <PreSQL />
+                <TransactionMessages>False</TransactionMessages>
+                <OutputOption>Overwrite</OutputOption>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>SF_YCode_SAP_SFUID Table</AnnotationText>
+              <DefaultAnnotationText><![CDATA[
+Query=SF_YCode_SAP_SFUID]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="74">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="4566" y="546" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="25">\\clecpfs02\sys\Salesforce_Team\BI_Revision_Control\Hyper_Extracts\Additional_Data_Sources\US10 YCode to SFID.xlsx|||Sheet1</File>
+              <Passwords />
+              <Disable>False</Disable>
+              <FormatSpecificOptions>
+                <PreserveFormat>False</PreserveFormat>
+                <UNCLocal>False</UNCLocal>
+                <SkipFieldNames>False</SkipFieldNames>
+                <OutputOption>Overwrite</OutputOption>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>US10 YCode to SFID.xlsx
+For Dataloader</AnnotationText>
+              <DefaultAnnotationText>US10 YCode to SFID.xlsx
+Query=Sheet1</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="96">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="4566" y="666" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="25">\\clecpfs02\sys\Salesforce_Team\BI_Revision_Control\Hyper_Extracts\Additional_Data_Sources\Unmatched to Match.xlsx|||Sheet1</File>
+              <Passwords />
+              <Disable>False</Disable>
+              <FormatSpecificOptions>
+                <PreserveFormat>False</PreserveFormat>
+                <UNCLocal>False</UNCLocal>
+                <SkipFieldNames>False</SkipFieldNames>
+                <OutputOption>Overwrite</OutputOption>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Unmatched to Match.xlsx
+Query=Sheet1</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="116">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="4566" y="786" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="25">\\clecpfs02\sys\Salesforce_Team\BI_Revision_Control\Hyper_Extracts\Additional_Data_Sources\YCode_Delete_File.xlsx|||Sheet1</File>
+              <Passwords />
+              <Disable>False</Disable>
+              <FormatSpecificOptions>
+                <PreserveFormat>False</PreserveFormat>
+                <UNCLocal>False</UNCLocal>
+                <SkipFieldNames>False</SkipFieldNames>
+                <OutputOption>Overwrite</OutputOption>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>YCode_Delete_File.xlsx
+Query=Sheet1</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="85">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="317" y="100" width="996" height="310" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>SF_USERS</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>SF_USERS</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="2">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="342" y="244" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File FileFormat="23" RecordLimit="">odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=salesforce backups;SERVER=NUSCLEVPDBAMP02;Trusted_Connection=yes|||select [salesforce backups].[dbo].[User].[Id],
+	[salesforce backups].[dbo].[User].[Name] as [FullName],
+	[salesforce backups].[dbo].[Profile].[Name] as [ProfileName],
+	[salesforce backups].[dbo].[User].[Username],
+	[salesforce backups].[dbo].[User].[IsActive],
+	[salesforce backups].[dbo].[User].[Country],
+	[salesforce backups].[dbo].[User].[CreatedDate],
+	[salesforce backups].[dbo].[User].[Team_Role__c],
+	[salesforce backups].[dbo].[User].[ManagerId],
+	[salesforce backups].[dbo].[User].[YCode__c] 
+from [salesforce backups].[dbo].[User] 
+	inner join [salesforce backups].[dbo].[Profile] on [salesforce backups].[dbo].[User].[ProfileId] = [salesforce backups].[dbo].[Profile].[Id]</File>
+              <FormatSpecificOptions>
+                <SingleRowFetch>False</SingleRowFetch>
+                <ReadCentroids>False</ReadCentroids>
+                <TableStyle>Quoted</TableStyle>
+                <CacheData>False</CacheData>
+                <SessionReadOnly>True</SessionReadOnly>
+                <ReadUncommitted>False</ReadUncommitted>
+                <NoProgress>True</NoProgress>
+                <PostSQL />
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <PreSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>SF USERS</AnnotationText>
+              <DefaultAnnotationText><![CDATA[
+Query=select [salesforce backups]....]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Id" size="18" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=salesforce backups;SERVER=NUSCLEVPDBAMP02;Trusted_Connection=yes|||select [salesforce backups].[dbo].[User].[Id],&#xA;	[salesforce backups].[dbo].[User].[Name] as [FullName],&#xA;	[salesforce backups].[dbo].[Profile].[Name] as [ProfileName],&#xA;	[salesforce backups].[dbo].[User].[Username],&#xA;	[salesforce backups].[dbo].[User].[IsActive],&#xA;	[salesforce backups].[dbo].[User].[Country],&#xA;	[salesforce backups].[dbo].[User].[CreatedDate],&#xA;	[salesforce backups].[dbo].[User].[Team_Role__c],&#xA;	[salesforce backups].[dbo].[User].[ManagerId],&#xA;	[salesforce backups].[dbo].[User].[YCode__c] &#xA;from [salesforce backups].[dbo].[User] &#xA;	inner join [salesforce backups].[dbo].[Profile] on [salesforce backups].[dbo].[User].[ProfileId] = [salesforce backups].[dbo].[Profile].[Id]" type="V_WString" />
+                <Field name="FullName" size="121" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=salesforce backups;SERVER=NUSCLEVPDBAMP02;Trusted_Connection=yes|||select [salesforce backups].[dbo].[User].[Id],&#xA;	[salesforce backups].[dbo].[User].[Name] as [FullName],&#xA;	[salesforce backups].[dbo].[Profile].[Name] as [ProfileName],&#xA;	[salesforce backups].[dbo].[User].[Username],&#xA;	[salesforce backups].[dbo].[User].[IsActive],&#xA;	[salesforce backups].[dbo].[User].[Country],&#xA;	[salesforce backups].[dbo].[User].[CreatedDate],&#xA;	[salesforce backups].[dbo].[User].[Team_Role__c],&#xA;	[salesforce backups].[dbo].[User].[ManagerId],&#xA;	[salesforce backups].[dbo].[User].[YCode__c] &#xA;from [salesforce backups].[dbo].[User] &#xA;	inner join [salesforce backups].[dbo].[Profile] on [salesforce backups].[dbo].[User].[ProfileId] = [salesforce backups].[dbo].[Profile].[Id]" type="V_WString" />
+                <Field name="ProfileName" size="255" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=salesforce backups;SERVER=NUSCLEVPDBAMP02;Trusted_Connection=yes|||select [salesforce backups].[dbo].[User].[Id],&#xA;	[salesforce backups].[dbo].[User].[Name] as [FullName],&#xA;	[salesforce backups].[dbo].[Profile].[Name] as [ProfileName],&#xA;	[salesforce backups].[dbo].[User].[Username],&#xA;	[salesforce backups].[dbo].[User].[IsActive],&#xA;	[salesforce backups].[dbo].[User].[Country],&#xA;	[salesforce backups].[dbo].[User].[CreatedDate],&#xA;	[salesforce backups].[dbo].[User].[Team_Role__c],&#xA;	[salesforce backups].[dbo].[User].[ManagerId],&#xA;	[salesforce backups].[dbo].[User].[YCode__c] &#xA;from [salesforce backups].[dbo].[User] &#xA;	inner join [salesforce backups].[dbo].[Profile] on [salesforce backups].[dbo].[User].[ProfileId] = [salesforce backups].[dbo].[Profile].[Id]" type="V_WString" />
+                <Field name="Username" size="80" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=salesforce backups;SERVER=NUSCLEVPDBAMP02;Trusted_Connection=yes|||select [salesforce backups].[dbo].[User].[Id],&#xA;	[salesforce backups].[dbo].[User].[Name] as [FullName],&#xA;	[salesforce backups].[dbo].[Profile].[Name] as [ProfileName],&#xA;	[salesforce backups].[dbo].[User].[Username],&#xA;	[salesforce backups].[dbo].[User].[IsActive],&#xA;	[salesforce backups].[dbo].[User].[Country],&#xA;	[salesforce backups].[dbo].[User].[CreatedDate],&#xA;	[salesforce backups].[dbo].[User].[Team_Role__c],&#xA;	[salesforce backups].[dbo].[User].[ManagerId],&#xA;	[salesforce backups].[dbo].[User].[YCode__c] &#xA;from [salesforce backups].[dbo].[User] &#xA;	inner join [salesforce backups].[dbo].[Profile] on [salesforce backups].[dbo].[User].[ProfileId] = [salesforce backups].[dbo].[Profile].[Id]" type="V_WString" />
+                <Field name="IsActive" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=salesforce backups;SERVER=NUSCLEVPDBAMP02;Trusted_Connection=yes|||select [salesforce backups].[dbo].[User].[Id],&#xA;	[salesforce backups].[dbo].[User].[Name] as [FullName],&#xA;	[salesforce backups].[dbo].[Profile].[Name] as [ProfileName],&#xA;	[salesforce backups].[dbo].[User].[Username],&#xA;	[salesforce backups].[dbo].[User].[IsActive],&#xA;	[salesforce backups].[dbo].[User].[Country],&#xA;	[salesforce backups].[dbo].[User].[CreatedDate],&#xA;	[salesforce backups].[dbo].[User].[Team_Role__c],&#xA;	[salesforce backups].[dbo].[User].[ManagerId],&#xA;	[salesforce backups].[dbo].[User].[YCode__c] &#xA;from [salesforce backups].[dbo].[User] &#xA;	inner join [salesforce backups].[dbo].[Profile] on [salesforce backups].[dbo].[User].[ProfileId] = [salesforce backups].[dbo].[Profile].[Id]" type="Bool" />
+                <Field name="Country" size="80" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=salesforce backups;SERVER=NUSCLEVPDBAMP02;Trusted_Connection=yes|||select [salesforce backups].[dbo].[User].[Id],&#xA;	[salesforce backups].[dbo].[User].[Name] as [FullName],&#xA;	[salesforce backups].[dbo].[Profile].[Name] as [ProfileName],&#xA;	[salesforce backups].[dbo].[User].[Username],&#xA;	[salesforce backups].[dbo].[User].[IsActive],&#xA;	[salesforce backups].[dbo].[User].[Country],&#xA;	[salesforce backups].[dbo].[User].[CreatedDate],&#xA;	[salesforce backups].[dbo].[User].[Team_Role__c],&#xA;	[salesforce backups].[dbo].[User].[ManagerId],&#xA;	[salesforce backups].[dbo].[User].[YCode__c] &#xA;from [salesforce backups].[dbo].[User] &#xA;	inner join [salesforce backups].[dbo].[Profile] on [salesforce backups].[dbo].[User].[ProfileId] = [salesforce backups].[dbo].[Profile].[Id]" type="V_WString" />
+                <Field name="CreatedDate" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=salesforce backups;SERVER=NUSCLEVPDBAMP02;Trusted_Connection=yes|||select [salesforce backups].[dbo].[User].[Id],&#xA;	[salesforce backups].[dbo].[User].[Name] as [FullName],&#xA;	[salesforce backups].[dbo].[Profile].[Name] as [ProfileName],&#xA;	[salesforce backups].[dbo].[User].[Username],&#xA;	[salesforce backups].[dbo].[User].[IsActive],&#xA;	[salesforce backups].[dbo].[User].[Country],&#xA;	[salesforce backups].[dbo].[User].[CreatedDate],&#xA;	[salesforce backups].[dbo].[User].[Team_Role__c],&#xA;	[salesforce backups].[dbo].[User].[ManagerId],&#xA;	[salesforce backups].[dbo].[User].[YCode__c] &#xA;from [salesforce backups].[dbo].[User] &#xA;	inner join [salesforce backups].[dbo].[Profile] on [salesforce backups].[dbo].[User].[ProfileId] = [salesforce backups].[dbo].[Profile].[Id]" type="DateTime" />
+                <Field name="Team_Role__c" size="255" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=salesforce backups;SERVER=NUSCLEVPDBAMP02;Trusted_Connection=yes|||select [salesforce backups].[dbo].[User].[Id],&#xA;	[salesforce backups].[dbo].[User].[Name] as [FullName],&#xA;	[salesforce backups].[dbo].[Profile].[Name] as [ProfileName],&#xA;	[salesforce backups].[dbo].[User].[Username],&#xA;	[salesforce backups].[dbo].[User].[IsActive],&#xA;	[salesforce backups].[dbo].[User].[Country],&#xA;	[salesforce backups].[dbo].[User].[CreatedDate],&#xA;	[salesforce backups].[dbo].[User].[Team_Role__c],&#xA;	[salesforce backups].[dbo].[User].[ManagerId],&#xA;	[salesforce backups].[dbo].[User].[YCode__c] &#xA;from [salesforce backups].[dbo].[User] &#xA;	inner join [salesforce backups].[dbo].[Profile] on [salesforce backups].[dbo].[User].[ProfileId] = [salesforce backups].[dbo].[Profile].[Id]" type="V_WString" />
+                <Field name="ManagerId" size="18" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=salesforce backups;SERVER=NUSCLEVPDBAMP02;Trusted_Connection=yes|||select [salesforce backups].[dbo].[User].[Id],&#xA;	[salesforce backups].[dbo].[User].[Name] as [FullName],&#xA;	[salesforce backups].[dbo].[Profile].[Name] as [ProfileName],&#xA;	[salesforce backups].[dbo].[User].[Username],&#xA;	[salesforce backups].[dbo].[User].[IsActive],&#xA;	[salesforce backups].[dbo].[User].[Country],&#xA;	[salesforce backups].[dbo].[User].[CreatedDate],&#xA;	[salesforce backups].[dbo].[User].[Team_Role__c],&#xA;	[salesforce backups].[dbo].[User].[ManagerId],&#xA;	[salesforce backups].[dbo].[User].[YCode__c] &#xA;from [salesforce backups].[dbo].[User] &#xA;	inner join [salesforce backups].[dbo].[Profile] on [salesforce backups].[dbo].[User].[ProfileId] = [salesforce backups].[dbo].[Profile].[Id]" type="V_WString" />
+                <Field name="YCode__c" size="4" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=salesforce backups;SERVER=NUSCLEVPDBAMP02;Trusted_Connection=yes|||select [salesforce backups].[dbo].[User].[Id],&#xA;	[salesforce backups].[dbo].[User].[Name] as [FullName],&#xA;	[salesforce backups].[dbo].[Profile].[Name] as [ProfileName],&#xA;	[salesforce backups].[dbo].[User].[Username],&#xA;	[salesforce backups].[dbo].[User].[IsActive],&#xA;	[salesforce backups].[dbo].[User].[Country],&#xA;	[salesforce backups].[dbo].[User].[CreatedDate],&#xA;	[salesforce backups].[dbo].[User].[Team_Role__c],&#xA;	[salesforce backups].[dbo].[User].[ManagerId],&#xA;	[salesforce backups].[dbo].[User].[YCode__c] &#xA;from [salesforce backups].[dbo].[User] &#xA;	inner join [salesforce backups].[dbo].[Profile] on [salesforce backups].[dbo].[User].[ProfileId] = [salesforce backups].[dbo].[Profile].[Id]" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="13">
+          <GuiSettings>
+            <Position x="546" y="245" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="Check Box (135)">False</Value>
+              <Value name="Check Box (136)">False</Value>
+              <Value name="List Box (11)">"FullName"</Value>
+              <Value name="Check Box (84)">True</Value>
+              <Value name="Check Box (117)">True</Value>
+              <Value name="Check Box (15)">True</Value>
+              <Value name="Check Box (109)">False</Value>
+              <Value name="Check Box (122)">False</Value>
+              <Value name="Check Box (53)">False</Value>
+              <Value name="Check Box (58)">False</Value>
+              <Value name="Check Box (70)">False</Value>
+              <Value name="Check Box (77)">True</Value>
+              <Value name="Drop Down (81)">upper</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Cleanse.yxmc" />
+        </Node>
+        <Node ToolID="20">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="762" y="246" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>NotContains</Operator>
+                <Field>ProfileName</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2022-02-18 11:32:38</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>Community</Operand>
+                  <StartDate>2022-02-18 11:32:38</StartDate>
+                  <EndDate>2022-02-18 11:32:38</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>!Contains([ProfileName],"Community")</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="26">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="1182" y="234" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>!Contains([ProfileName],"Community") AND !Contains([ProfileName],"Partner")</Expression>
+              <Mode>Custom</Mode>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>!Contains([ProfileName],"Community") AND !Contains([ProfileName],"Partner")</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="84">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="449" y="185" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>Contains</Operator>
+                <Field>FullName</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2024-05-29 10:04:17</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>Zajacs</Operand>
+                  <StartDate>2024-05-29 10:04:17</StartDate>
+                  <EndDate>2024-05-29 10:04:17</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Contains([FullName],"Zajacs")</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="88">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="558" y="149" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>=</Operator>
+                <Field>Id</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2025-03-12 09:19:59</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>0055d00000EZz25AAD</Operand>
+                  <StartDate>2025-03-12 09:19:59</StartDate>
+                  <EndDate>2025-03-12 09:19:59</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[Id] = "0055d00000EZz25AAD"</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="92">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="461" y="243" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="89" y="497" width="1280" height="397" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>YCode to Rep from SAP Table</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="3">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="114" y="569" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File RecordLimit="" FileFormat="23">odbc:DRIVER={SQL Server};DATABASE=SF_DATASOURCES;SERVER=NUSCLEVPDBAMP02;Trusted_Connection=yes|||select dbo.YCode_Sales_Report_Sf.* 
+from dbo.YCode_Sales_Report_Sf</File>
+              <FormatSpecificOptions>
+                <PreSQL />
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <NoProgress>True</NoProgress>
+                <SessionReadOnly>True</SessionReadOnly>
+                <CacheData>False</CacheData>
+                <TableStyle>Quoted</TableStyle>
+                <ReadUncommitted>False</ReadUncommitted>
+                <PostSQL />
+                <SingleRowFetch>False</SingleRowFetch>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText><![CDATA[YCode_Sales_Report_SF
+]]></AnnotationText>
+              <DefaultAnnotationText><![CDATA[
+Query=select dbo.YCode_Sales_Repor...]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="CTyp" size="50" source="File: odbc:DRIVER={SQL Server};DATABASE=SF_DATASOURCES;SERVER=NUSCLEVPDBAMP02;Trusted_Connection=yes|||select dbo.YCode_Sales_Report_Sf.* &#xA;from dbo.YCode_Sales_Report_Sf" type="V_String" />
+                <Field name="Name" size="50" source="File: odbc:DRIVER={SQL Server};DATABASE=SF_DATASOURCES;SERVER=NUSCLEVPDBAMP02;Trusted_Connection=yes|||select dbo.YCode_Sales_Report_Sf.* &#xA;from dbo.YCode_Sales_Report_Sf" type="V_String" />
+                <Field name="Sold-To" size="50" source="File: odbc:DRIVER={SQL Server};DATABASE=SF_DATASOURCES;SERVER=NUSCLEVPDBAMP02;Trusted_Connection=yes|||select dbo.YCode_Sales_Report_Sf.* &#xA;from dbo.YCode_Sales_Report_Sf" type="V_String" />
+                <Field name="Sold-To Name" size="50" source="File: odbc:DRIVER={SQL Server};DATABASE=SF_DATASOURCES;SERVER=NUSCLEVPDBAMP02;Trusted_Connection=yes|||select dbo.YCode_Sales_Report_Sf.* &#xA;from dbo.YCode_Sales_Report_Sf" type="V_String" />
+                <Field name="SOff " size="50" source="File: odbc:DRIVER={SQL Server};DATABASE=SF_DATASOURCES;SERVER=NUSCLEVPDBAMP02;Trusted_Connection=yes|||select dbo.YCode_Sales_Report_Sf.* &#xA;from dbo.YCode_Sales_Report_Sf" type="V_String" />
+                <Field name="SGrp " size="50" source="File: odbc:DRIVER={SQL Server};DATABASE=SF_DATASOURCES;SERVER=NUSCLEVPDBAMP02;Trusted_Connection=yes|||select dbo.YCode_Sales_Report_Sf.* &#xA;from dbo.YCode_Sales_Report_Sf" type="V_String" />
+                <Field name="SGrp  Desc " size="50" source="File: odbc:DRIVER={SQL Server};DATABASE=SF_DATASOURCES;SERVER=NUSCLEVPDBAMP02;Trusted_Connection=yes|||select dbo.YCode_Sales_Report_Sf.* &#xA;from dbo.YCode_Sales_Report_Sf" type="V_String" />
+                <Field name="From Date" size="50" source="File: odbc:DRIVER={SQL Server};DATABASE=SF_DATASOURCES;SERVER=NUSCLEVPDBAMP02;Trusted_Connection=yes|||select dbo.YCode_Sales_Report_Sf.* &#xA;from dbo.YCode_Sales_Report_Sf" type="V_String" />
+                <Field name="End Date" size="50" source="File: odbc:DRIVER={SQL Server};DATABASE=SF_DATASOURCES;SERVER=NUSCLEVPDBAMP02;Trusted_Connection=yes|||select dbo.YCode_Sales_Report_Sf.* &#xA;from dbo.YCode_Sales_Report_Sf" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="4">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="498" y="570" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="CTyp" selected="True" rename="Condition Type" />
+                <SelectField field="Sold-To Name" selected="True" rename="Name 1" />
+                <SelectField field="From Date" selected="False" type="Date" size="10" />
+                <SelectField field="End Date" selected="False" type="Date" size="10" />
+                <SelectField field="From Date output" selected="True" rename="From Date" />
+                <SelectField field="DateTime_Out" selected="True" rename="End Date" />
+                <SelectField field="Sold-to pt" selected="False" type="V_String" size="19" />
+                <SelectField field="Name 1                             " selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="5">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="690" y="570" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>[End Date] &gt;= "2017-02-01"
+AND !Contains([Name],"Automation") AND !Contains([Name],"In-House Credit") AND
+!Contains([Name],"Operations") AND [Condition Type_Matched]= 1 AND !Contains([Name],"House") AND !Contains([Name],"Indalco") AND !Contains([Name],"Education") AND !Contains([Name],"Cobot") AND !Contains([Name],"Educ") AND !Contains([Name],"Educatio") AND !Contains([Name],"School") AND !Contains([Name],"Distributor") AND !Contains([Name],"Applicatns") AND
+!Contains([Name],"Automati") AND
+!Contains([Name],"Inactive")</Expression>
+              <Mode>Custom</Mode>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[End Date] &gt;= "2017-02-01"
+AND !Contains([Name],"Automation") AND !Contains([Nam...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="7">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1026" y="546" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Name 1" selected="False" />
+                <SelectField field="Name 1                             " selected="False" rename="Name" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="9">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="342" y="762" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>Contains</Operator>
+                <Field>Name</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2023-03-20 10:40:06</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>Caroline</Operand>
+                  <StartDate>2023-03-20 10:40:06</StartDate>
+                  <EndDate>2023-03-20 10:40:06</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Contains([Name],"Caroline")</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="12">
+          <GuiSettings>
+            <Position x="1122" y="546" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="Check Box (135)">False</Value>
+              <Value name="Check Box (136)">False</Value>
+              <Value name="List Box (11)">"Name"</Value>
+              <Value name="Check Box (84)">True</Value>
+              <Value name="Check Box (117)">True</Value>
+              <Value name="Check Box (15)">True</Value>
+              <Value name="Check Box (109)">False</Value>
+              <Value name="Check Box (122)">False</Value>
+              <Value name="Check Box (53)">False</Value>
+              <Value name="Check Box (58)">False</Value>
+              <Value name="Check Box (70)">False</Value>
+              <Value name="Check Box (77)">True</Value>
+              <Value name="Drop Down (81)">upper</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Cleanse.yxmc" />
+        </Node>
+        <Node ToolID="67">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DateTime.DateTime">
+            <Position x="306" y="570" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <IsFrom value="False" />
+              <InputFieldName>From Date</InputFieldName>
+              <Language>English</Language>
+              <Format>yyyyMMdd</Format>
+              <OutputFieldName>From Date output</OutputFieldName>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Convert From Date From:
+yyyyMMdd</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDateTime" />
+        </Node>
+        <Node ToolID="68">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DateTime.DateTime">
+            <Position x="402" y="570" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <IsFrom value="False" />
+              <InputFieldName>End Date</InputFieldName>
+              <Language>English</Language>
+              <Format>yyyyMMdd</Format>
+              <OutputFieldName>DateTime_Out</OutputFieldName>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Convert End Date From:
+yyyyMMdd</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDateTime" />
+        </Node>
+        <Node ToolID="71">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="1194" y="546" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>=</Operator>
+                <Field>End Date</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2022-06-21 13:02:32</PeriodDate>
+                  <PeriodType>days</PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>9999-12-31</Operand>
+                  <StartDate>2022-06-21 13:02:32</StartDate>
+                  <EndDate>2022-06-21 13:02:32</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[End Date] = "9999-12-31"</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="76">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+            <Position x="210" y="570" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SortInfo locale="0">
+                <Field field="CTyp" order="Ascending" />
+              </SortInfo>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>CTyp - Ascending</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+        </Node>
+        <Node ToolID="77">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.RegEx.RegEx">
+            <Position x="594" y="570" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Field>Condition Type</Field>
+              <RegExExpression value="Y\d.+" />
+              <CaseInsensitve value="True" />
+              <Method>Match</Method>
+              <Replace expression="">
+                <CopyUnmatched value="True" />
+              </Replace>
+              <ParseSimple>
+                <SplitToRows value="False" />
+                <RootName>Condition Type</RootName>
+                <NumFields value="3" />
+                <ErrorHandling>Warn</ErrorHandling>
+              </ParseSimple>
+              <ParseComplex>
+                <Field field="No Marked Groups Found" type="No Marked Groups Found" size="No Marked Groups Found" />
+              </ParseComplex>
+              <Match>
+                <Field>Condition Type_Matched</Field>
+                <ErrorUnmatched value="False" />
+              </Match>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRegEx" />
+        </Node>
+        <Node ToolID="78">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+            <Position x="906" y="546" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SortInfo locale="0">
+                <Field field="Condition Type" order="Ascending" />
+              </SortInfo>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Condition Type - Ascending</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+        </Node>
+        <Node ToolID="79">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="930" y="810" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="Condition Type" action="Max" rename="Max_Condition Type" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="80">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="810" y="558" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>!StartsWith([Condition Type],"Y2")</Expression>
+              <Mode>Custom</Mode>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>!StartsWith([Condition Type],"Y2")</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="91">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="246" y="689" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>Contains</Operator>
+                <Field>Name</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2025-03-12 09:26:41</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>Florence</Operand>
+                  <StartDate>2025-03-12 09:26:41</StartDate>
+                  <EndDate>2025-03-12 09:26:41</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Contains([Name],"Florence")</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="93">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="846" y="750" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>Contains</Operator>
+                <Field>Name</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2025-03-12 09:26:41</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>Florence</Operand>
+                  <StartDate>2025-03-12 09:26:41</StartDate>
+                  <EndDate>2025-03-12 09:26:41</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Contains([Name],"Florence")</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="94">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="1242" y="678" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>Contains</Operator>
+                <Field>Name</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2025-03-12 09:26:41</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>Florence</Operand>
+                  <StartDate>2025-03-12 09:26:41</StartDate>
+                  <EndDate>2025-03-12 09:26:41</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Contains([Name],"Florence")</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="45" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output26" />
+      <Destination ToolID="22" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="Right" />
+      <Destination ToolID="22" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="Join" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Join" />
+      <Destination ToolID="24" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="True" />
+      <Destination ToolID="24" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Left" />
+      <Destination ToolID="96" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="24" Connection="Join" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="28" Connection="Output" />
+      <Destination ToolID="32" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="37" Connection="True" />
+      <Destination ToolID="32" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="Output" />
+      <Destination ToolID="37" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="32" Connection="Output" />
+      <Destination ToolID="38" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="Unique" />
+      <Destination ToolID="42" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="42" Connection="Output" />
+      <Destination ToolID="65" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="45" Connection="Output" />
+      <Destination ToolID="14" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="65" Connection="Output" />
+      <Destination ToolID="72" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="72" Connection="Output" />
+      <Destination ToolID="73" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="73" Connection="Output" />
+      <Destination ToolID="75" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="73" Connection="Output" />
+      <Destination ToolID="98" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="97" Connection="Output" />
+      <Destination ToolID="98" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="73" Connection="Output" />
+      <Destination ToolID="108" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="105" Connection="Output" />
+      <Destination ToolID="108" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="75" Connection="Output" />
+      <Destination ToolID="74" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="97" Connection="Output" />
+      <Destination ToolID="102" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="101" Connection="Output" />
+      <Destination ToolID="102" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="108" Connection="Join" />
+      <Destination ToolID="111" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="111" Connection="Unique" />
+      <Destination ToolID="112" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="111" Connection="Unique" />
+      <Destination ToolID="118" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="111" Connection="Unique" />
+      <Destination ToolID="119" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="118" Connection="Output" />
+      <Destination ToolID="50" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="119" Connection="Output" />
+      <Destination ToolID="46" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="114" Connection="Output" />
+      <Destination ToolID="115" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="115" Connection="True" />
+      <Destination ToolID="116" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="102" Connection="Join" />
+      <Destination ToolID="105" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="105" Connection="Output" />
+      <Destination ToolID="103" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="98" Connection="Join" />
+      <Destination ToolID="101" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="101" Connection="Output" />
+      <Destination ToolID="100" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="84" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="88" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="92" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="97" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output26" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="True" />
+      <Destination ToolID="21" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="71" Connection="True" />
+      <Destination ToolID="21" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="True" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="92" Connection="Output" />
+      <Destination ToolID="13" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="76" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="91" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="77" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="True" />
+      <Destination ToolID="80" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="True" />
+      <Destination ToolID="93" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="12" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output26" />
+      <Destination ToolID="71" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output26" />
+      <Destination ToolID="94" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="67" Connection="Output" />
+      <Destination ToolID="68" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="68" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="71" Connection="True" />
+      <Destination ToolID="90" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="76" Connection="Output" />
+      <Destination ToolID="67" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="77" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="78" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="78" Connection="Output" />
+      <Destination ToolID="79" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="80" Connection="True" />
+      <Destination ToolID="78" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="True" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <IsTemplate value="False" />
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>SF_YCode_SAP_SFUID work version</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="12fc1fe6-aa4d-4093-bdca-9a89c7fdd171" />
+      <Telemetry>
+        <PreviousWorkflowId value="8cee6554-a7cc-4e53-b28a-c47c482221dc" />
+        <OriginWorkflowId value="8cee6554-a7cc-4e53-b28a-c47c482221dc" />
+      </Telemetry>
+      <PlatformWorkflowId value="" />
+    </MetaInfo>
+    <Events>
+      <Enabled value="False" />
+      <Event>
+        <Description>After Run With Errors: Email to tessa_gable@lincolnelectric.com</Description>
+        <When>AfterError</When>
+        <SendMail value="True" />
+        <email_SMTPServer>smtp.corp.le</email_SMTPServer>
+        <email_Encryption>None</email_Encryption>
+        <email_Port>25</email_Port>
+        <email_Authentication value="False" />
+        <email_Username />
+        <email_Password />
+        <email_From>tessa_gable@lincolnelectric.com</email_From>
+        <email_To>tessa_gable@lincolnelectric.com</email_To>
+        <email_Subject>%AppName%: %Module% - %NumErrors% Errors</email_Subject>
+        <email_Body><![CDATA[User: %User%
+ComputerName: %ComputerName%
+WorkingDir: %WorkingDir%
+Errors: %NumErrors%
+ConversionErrors: %NumConvErrors%
+Warnings: %Warnings%
+
+%OutputLog%
+]]></email_Body>
+        <email_Attachments />
+      </Event>
+    </Events>
+  </Properties>
+</AlteryxDocument>
