@@ -1,0 +1,106 @@
+<VSCode.Cell language="markdown">
+# Selling System config generated from the SFCore workbook
+
+This config mirrors the structure used in the Sales Order config notebook. It reads the workbook tab `5. Source-to-Model Mapping` and builds a `SD_TABLE_CONFIGS` dictionary using:
+- `Legacy Final Table` as the table key
+- `Target Table` as `gold_name`
+- `Legacy Column` as `silver_cols`
+- `Target Column / Attribute` as the rename map where available
+</VSCode.Cell>
+<VSCode.Cell language="python">
+import openpyxl
+from collections import OrderedDict, Counter
+
+xlsx_path = r'C:\Users\santhoshkkumar\Documents\LE_Code_base\LE\SFCore_Dimensional_Model_and_Mapping.xlsx'
+wb = openpyxl.load_workbook(xlsx_path, data_only=True)
+ws = next(s for s in wb.worksheets if s.title.strip() == '5. Source-to-Model Mapping')
+rows = list(ws.iter_rows(values_only=True))
+
+header = rows[3]
+legacy_idx = header.index('Legacy Final Table')
+target_idx = header.index('Target Table')
+legacy_col_idx = header.index('Legacy Column')
+target_col_idx = header.index('Target Column / Attribute')
+
+# Build per-table mapping from workbook
+by_table = OrderedDict()
+for row in rows[4:]:
+    if row is None or len(row) <= max(legacy_idx, target_idx, legacy_col_idx, target_col_idx):
+        continue
+    legacy_table = row[legacy_idx]
+    target_table = row[target_idx]
+    legacy_col = row[legacy_col_idx]
+    target_col = row[target_col_idx]
+
+    if legacy_table is None:
+        continue
+
+    key = str(legacy_table)
+    by_table.setdefault(key, {
+        'gold_counts': Counter(),
+        'silver_cols': [],
+        'rename_map': {},
+        'target_cols': []
+    })
+
+    if target_table is not None:
+        by_table[key]['gold_counts'][str(target_table)] += 1
+
+    if legacy_col is not None:
+        col_name = str(legacy_col)
+        if col_name not in by_table[key]['silver_cols']:
+            by_table[key]['silver_cols'].append(col_name)
+
+    if legacy_col is not None and target_col is not None:
+        legacy_name = str(legacy_col)
+        target_name = str(target_col)
+        if legacy_name != target_name:
+            by_table[key]['rename_map'][legacy_name] = target_name
+
+    if target_col is not None:
+        target_name = str(target_col)
+        if target_name not in by_table[key]['target_cols']:
+            by_table[key]['target_cols'].append(target_name)
+
+SD_TABLE_CONFIGS = OrderedDict()
+for legacy_table, data in by_table.items():
+    gold_name = data['gold_counts'].most_common(1)[0][0] if data['gold_counts'] else ''
+    silver_cols = data['silver_cols']
+
+    # Heuristic for key-like columns following the same pattern as the SAP config files
+    key_candidates = [
+        c for c in silver_cols
+        if c.lower().endswith('_id') or c.lower().endswith('id') or c.lower().endswith('_key') or c.lower().endswith('key')
+    ]
+    primary_keys = key_candidates[:3] if key_candidates else []
+    if not primary_keys and silver_cols:
+        primary_keys = [silver_cols[0]]
+
+    sk_name = legacy_table.replace('SF_', '').replace('_', ' ')
+    sk_name = ''.join(word.capitalize() for word in sk_name.split())
+    sk_col = f'{sk_name}_SK' if sk_name else f'{legacy_table}_SK'
+
+    SD_TABLE_CONFIGS[legacy_table] = {
+        'primary_keys': primary_keys,
+        'sk_col': sk_col,
+        'gold_name': gold_name,
+        'silver_cols': silver_cols,
+        'rename_map': data['rename_map'],
+        'desc_joins': [],
+        'sk_joins': [],
+        'id_cols': [],
+        'lzero_cols': primary_keys[:2] if primary_keys else [],
+        'source_lh_key': 'SOURCE_LH_ABFSS',
+        'enrich': [],
+    }
+
+print(f'Loaded {len(SD_TABLE_CONFIGS)} tables from workbook mapping.')
+for tbl, cfg in SD_TABLE_CONFIGS.items():
+    print(tbl, '->', cfg['gold_name'], '| cols:', len(cfg['silver_cols']), '| keys:', cfg['primary_keys'])
+</VSCode.Cell>
+<VSCode.Cell language="python">
+# Example of the generated config structure for the first table in the workbook
+first_key = next(iter(SD_TABLE_CONFIGS))
+print(first_key)
+print(SD_TABLE_CONFIGS[first_key])
+</VSCode.Cell>
